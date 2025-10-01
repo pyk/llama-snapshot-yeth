@@ -17,7 +17,7 @@ async function main() {
     // Create viem client
     const viem = createPublicClient({
         chain: mainnet,
-        transport: http(),
+        transport: http(env.RPC_URL),
     })
 
     // Get locker

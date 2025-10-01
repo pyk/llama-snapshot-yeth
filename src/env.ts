@@ -5,9 +5,8 @@ import { z } from "zod"
 config()
 
 const EnvSchema = z.object({
-    BLOCK_NUMBER: z
-        .string({ message: "BLOCK_NUMBER undefined" })
-        .transform((x) => BigInt(x)),
+    BLOCK_NUMBER: z.string({ message: "BLOCK_NUMBER undefined" }).transform((x) => BigInt(x)),
+    RPC_URL: z.string(),
 })
 
 export const env = EnvSchema.parse(process.env)
